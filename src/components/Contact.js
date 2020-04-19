@@ -9,7 +9,7 @@ import {
 
 const contact = () => {
   return (
-    <section className="contact">
+    <section id="contact-section" className="contact">
       <div className="contact-center">
         <Title
           title1="contact"

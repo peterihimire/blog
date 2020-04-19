@@ -3,7 +3,7 @@ import Title from "./Title";
 
 const skill = props => {
   return (
-    <section className="skills">
+    <section id="skills-section" className="skills">
       <div className="skills-center">
         <Title
           title1="my"

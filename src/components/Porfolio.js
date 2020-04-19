@@ -1,18 +1,19 @@
 import React from "react";
 import Title from "../components/Title";
-
+import TechFilter from "../components/TechFilter";
 import { Link } from "react-router-dom";
 import { FaChrome, FaGithub } from "react-icons/fa";
 
 const portfolio = props => {
   return (
-    <section className="projects">
+    <section id="portfolio-section" className="projects">
       <div className="project-center">
         <Title
           title1="my"
           title2="portfolio"
           subtitle="Check out some of my projects..."
         />
+        <TechFilter />
         <div className="project">
           {props.portfolios.map((item, index) => {
             return (

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -10,12 +11,12 @@ import {
   FaSass,
   FaLinux,
   FaGit,
-  FaGulp,
-  FaArrowAltCircleUp
+  FaGulp
+  // FaArrowAltCircleUp
 } from "react-icons/fa";
 import { FaRocket, FaHeartbeat, FaGem, FaDesktop } from "react-icons/fa";
 import Navbar from "./components/Navbar";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // import Default from "./pages/Missing";
 // import Home from "./pages/Home";
@@ -193,10 +194,9 @@ class App extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.listenToScroll);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.listenToScroll);
+    document.addEventListener("scroll", e => {
+      this.toggleVisibility();
+    });
   }
 
   toggleHandler = () => {
@@ -211,17 +211,28 @@ class App extends Component {
     });
   };
 
-  listenToScroll = () => {
+  toggleVisibility = () => {
     // let position = window.scrollY;
     let position = window.pageYOffset;
     console.log(position);
-    if (position >= 1050) {
+    if (position > 1050) {
       console.log("I am at position 1050 and above");
       this.setState({
-        isVisible: !this.state.isVisible
+        isVisible: true
+      });
+    } else {
+      this.setState({
+        isVisible: false
       });
     }
   };
+
+  scrollUp() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
   render() {
     return (
@@ -240,14 +251,7 @@ class App extends Component {
         <Skill skills={this.state.skills} />
         <Contact />
         <Footer />
-
-        {/* This is element I am trying to apply the listenToScroll method */}
-        <Link
-          to="/"
-          className={this.state.isVisible ? "scroll-top top-btn" : "scroll-top"}
-        >
-          <FaArrowAltCircleUp />
-        </Link>
+        <ScrollToTop scroll={this.scrollUp} showTop={this.state.isVisible} />
       </Fragment>
     );
   }

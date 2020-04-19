@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const about = props => {
   return (
-    <section className="about">
+    <section id="about-section" className="about">
       <div className="about-center">
         <Title
           title1="about"
