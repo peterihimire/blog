@@ -359,7 +359,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem 1.1rem;
-  /* border-radius: 0.2rem; */
   text-decoration: none;
   border: 0.15rem solid var(--mainWhite);
   color: var(--mainWhite);
@@ -368,6 +367,7 @@ body {
   font-weight: bold;
   font-size: 1rem;
   background: none;
+  transition: all linear 1s;
 }
 
 .animated-btn {
@@ -380,30 +380,24 @@ body {
 
 .btn:hover {
   cursor: pointer;
-  /* box-shadow: 0 8px 12px 0 rgba(206, 210, 212, 0.555); */
   border: solid 0.15rem var(--mainWhite);
   background: var(--primaryColor);
-  transition: var(--mainTransition);
-  /* transform: translateY(-0.2rem);
-  transition: transform 150ms; */
+  transition: all linear 1s;
 }
 
 .indicator {
   color: var(--mainWhite);
-  line-height: 4rem;
-  height: 3.5rem;
-  width: 3.5rem;
-  border-radius: 50%;
-  font-size: 2rem;
-  /* padding: 10rem 0 0 0; */
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  padding: 0.4rem 0.6rem 0 0.6rem;
   animation: bounce;
   animation-duration: 2s;
-  /* animation-direction: alternate; */
   animation-iteration-count: infinite;
   position: absolute;
   display: inline-block;
   bottom: 5%;
-  left: 48%;
+  left: 47.5%;
+  background: var(--secondaryColor);
 }
 @media screen and (min-width: 768px) {
   .banner h1 {
@@ -420,7 +414,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1.8rem 4rem;
-    /* border-radius: 0.2rem; */
     text-decoration: none;
     border: 3px solid var(--mainWhite);
     color: var(--mainWhite);
@@ -430,15 +423,13 @@ body {
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
     background: none;
+    transition: all linear 1s;
   }
   .btn:hover {
     cursor: pointer;
-    /* box-shadow: 0 8px 12px 0 rgba(206, 210, 212, 0.555); */
     border: solid 0.3rem var(--mainWhite);
     background: var(--primaryColor);
-    transition: var(--mainTransition);
-    /* transform: translateY(-0.2rem);
-    transition: transform 150ms; */
+    transition: all linear 1s;
   }
   .banner-follow {
     color: var(--mainWhite);
@@ -452,20 +443,17 @@ body {
   }
   .indicator {
     color: var(--mainWhite);
-    line-height: 4rem;
-    height: 3.5rem;
-    width: 3.5rem;
-    border-radius: 50%;
+    border-radius: 0.2rem;
     font-size: 2rem;
-    /* padding: 10rem 0 0 0; */
+    padding: 0.8rem 1rem 0 1rem;
     animation: bounce;
     animation-duration: 2s;
-    /* animation-direction: alternate; */
     animation-iteration-count: infinite;
     position: absolute;
     display: inline-block;
     bottom: 5%;
-    left: 50%;
+    left: 49%;
+    background: var(--secondaryColor);
   }
 }
 /* End of Banner */
@@ -1292,8 +1280,8 @@ textarea {
   right: 0rem;
   bottom: 5rem;
   visibility: hidden;
-  transition: var(--mainTransition);
-  padding: 0.2rem 1rem;
+  transition: all linear 0.5s;
+  padding: 0.2rem 1rem 0 1rem;
   background: var(--secondaryColor);
   border-radius: 50px 0 0 50px;
   transform: translateX(100%);
@@ -1312,8 +1300,8 @@ textarea {
     right: 0rem;
     bottom: 10rem;
     visibility: hidden;
-    transition: var(--mainTransition);
-    padding: 0.5rem 2rem;
+    transition: all linear 0.5s;
+    padding: 0.5rem 2rem 0 2rem;
     background: var(--secondaryColor);
     border-radius: 50px 0 0 50px;
     transform: translateX(100%);

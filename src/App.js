@@ -12,7 +12,7 @@ import {
   FaLinux,
   FaGit,
   FaGulp,
-  FaArrowAltCircleDown
+  FaArrowDown
 } from "react-icons/fa";
 import { FaRocket, FaHeartbeat, FaGem, FaDesktop } from "react-icons/fa";
 import Navbar from "./components/Navbar";
@@ -226,7 +226,7 @@ class App extends Component {
             offset={-74}
             className="indicator"
           >
-            <FaArrowAltCircleDown />
+            <FaArrowDown />
           </Link>
         </Hero>
         <Services myServices={this.state.services} />
