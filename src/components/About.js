@@ -2,6 +2,7 @@ import React from "react";
 import Title from "../components/Title";
 import portrait from "../images/peter.jpg";
 import { Link } from "react-router-dom";
+import Fade from "react-reveal/Fade";
 
 const about = props => {
   return (
@@ -55,10 +56,12 @@ const about = props => {
         <div className="stack-center">
           {props.aboutDetails.map((item, index) => {
             return (
-              <article key={index} className="stack">
-                <h3>{item.title}</h3>
-                <p>{item.details}</p>
-              </article>
+              <Fade bottom delay={500} duration={1000}>
+                <article key={index} className="stack">
+                  <h3>{item.title}</h3>
+                  <p>{item.details}</p>
+                </article>
+              </Fade>
             );
           })}
         </div>

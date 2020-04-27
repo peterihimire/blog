@@ -91,7 +91,7 @@ function footer() {
       <div className="footer-two">
         <div className="contact-center">
           <div className="last-footer">
-            <p>Copyright &copy; 2020 Peter Ihimire. frontend web developer. </p>
+            <p>Copyright &copy; 2020 Peter Ihimire. all rights reserved. </p>
           </div>
         </div>
       </div>

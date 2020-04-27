@@ -11,27 +11,24 @@ import {
   FaSass,
   FaLinux,
   FaGit,
-  FaGulp
-  // FaArrowAltCircleUp
+  FaGulp,
+  FaArrowAltCircleDown
 } from "react-icons/fa";
 import { FaRocket, FaHeartbeat, FaGem, FaDesktop } from "react-icons/fa";
 import Navbar from "./components/Navbar";
-// import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
-// import Default from "./pages/Missing";
-// import Home from "./pages/Home";
-
-import img1 from "./images/benkih-ecommerce.png";
-import img2 from "./images/benkih-todo.png";
-import img3 from "./images/benkih-budget.png";
-import img4 from "./images/benkih-quiz.png";
-import img5 from "./images/peterihimirefewd.png";
+// import img1 from "./images/benkih-ecommerce.png";
+// import img2 from "./images/benkih-todo.png";
+// import img3 from "./images/benkih-budget.png";
+// import img4 from "./images/benkih-quiz.png";
+// import img5 from "./images/peterihimirefewd.png";
 
 import Hero from "./components/Hero";
 import Banner from "./components/Banner";
 import Services from "./components/Services";
 import About from "./components/About";
-import Portfolio from "./components/Porfolio";
+import Projects from "./components/Projects";
 import Skill from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -44,7 +41,7 @@ class App extends Component {
         iconColor: "gem-color",
         title: "intuitive UX/UI",
         info:
-          "Strong preference for easy to use Intuitive User Experience and User Interface."
+          "I have strong preference for easy to use Intuitive User Experience and User Interfaces."
       },
       {
         icon: <FaRocket />,
@@ -58,14 +55,14 @@ class App extends Component {
         iconColor: "desktop-color",
         title: "responsive layout",
         info:
-          "My layout will work on any device, be it desktop, laptop and mobile phones."
+          "My layout will work on any device, be it desktops, laptops, tablets and mobile phones."
       },
       {
         icon: <FaHeartbeat />,
         iconColor: "heart-color",
         title: "dynamic website",
         info:
-          "Website dont have to be static, I like to make webpages come to life."
+          "Website dont have to be static, I like to make web pages come to life."
       }
     ],
     stacks: [
@@ -83,48 +80,6 @@ class App extends Component {
         title: "mentor",
         details:
           " Starting the journey of a web development and software engineering has never been easy, I know what it feels like, thats why I genuinely care about new programmers and fellow web developers, mentoring and helping them improve on their soft and hard skills as a software engineer."
-      }
-    ],
-    projects: [
-      {
-        title: "todo app",
-        image: img2,
-        detail: "A todo productivity app to help organize task.",
-        technologies: ["html", "css", "javascript"],
-        github: "https://github.com/peterihimire/benkih-todo",
-        online: "https://peterihimire.github.io/benkih-todo"
-      },
-      {
-        title: "budget app",
-        image: img3,
-        detail: "A budget app to help organize expenses.",
-        technologies: ["html", "css", "javascript"],
-        github: "https://github.com/peterihimire/benkih-budget",
-        online: "https://peterihimire.github.io/benkih-budget"
-      },
-      {
-        title: "quiz app",
-        image: img4,
-        detail: "A science/computer based quiz app.",
-        technologies: ["html", "css", "javascript"],
-        github: "https://github.com/peterihimire/benkih-quiz",
-        online: "https://peterihimire.github.io/benkih-quiz"
-      },
-      {
-        title: "product store",
-        image: img1,
-        detail: "An e-commerce store, frontend.",
-        technologies: ["html", "css", "javascript"],
-        github: "https://github.com/peterihimire/benkih-ecommerce",
-        online: "https://peterihimire.github.io/benkih-ecommerce"
-      },
-      {
-        title: "personal website",
-        image: img5,
-        detail: "A personal portfolio website, hosted on netlify.",
-        technologies: ["react"],
-        github: "https://github.com/peterihimire/peterihimire",
-        online: "https://peterihimire.github.io/peterihimire"
       }
     ],
     skills: [
@@ -190,7 +145,13 @@ class App extends Component {
       }
     ],
     isOpen: false,
-    isVisible: false
+    isVisible: false,
+    //
+    projects: [],
+    sortedProjects: [],
+    technologies: [],
+    loading: true,
+    type: "all"
   };
 
   componentDidMount() {
@@ -215,7 +176,7 @@ class App extends Component {
     // let position = window.scrollY;
     let position = window.pageYOffset;
     console.log(position);
-    if (position > 1050) {
+    if (position > 2050) {
       console.log("I am at position 1050 and above");
       this.setState({
         isVisible: true
@@ -243,11 +204,34 @@ class App extends Component {
           overlay={this.removeOverlay}
         />
         <Hero hero="defaultHero">
-          <Banner name="peter ihimire" title="frontend web developer" />
+          <Banner name="peter ihimire" title="frontend web developer">
+            <Link
+              activeClass="active"
+              to="project-section"
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className="btn animated-btn"
+            >
+              see my work
+            </Link>
+          </Banner>
+          <Link
+            activeClass="active"
+            to="service-section"
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-74}
+            className="indicator"
+          >
+            <FaArrowAltCircleDown />
+          </Link>
         </Hero>
         <Services myServices={this.state.services} />
         <About aboutDetails={this.state.stacks} />
-        <Portfolio portfolios={this.state.projects} />
+        <Projects />
         <Skill skills={this.state.skills} />
         <Contact />
         <Footer />

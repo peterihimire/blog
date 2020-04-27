@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowAltCircleUp } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa";
 
 class ScrollToTop extends Component {
   render() {
@@ -11,7 +11,7 @@ class ScrollToTop extends Component {
           className={this.props.showTop ? "scroll-top top-btn" : "scroll-top"}
           onClick={this.props.scroll}
         >
-          <FaArrowAltCircleUp />
+          <FaChevronUp />
         </Link>
       </>
     );

@@ -13,7 +13,8 @@ import {
   FaGithub,
   FaAlignRight
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import logo from "../images/l7.svg";
 
 const navbar = props => {
@@ -28,7 +29,15 @@ const navbar = props => {
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
-            <Link to="/" className="logo">
+            <Link
+              activeClass="active"
+              to="home-section"
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className="logo"
+            >
               <img src={logo} alt="PeterIhimire logo" />
             </Link>
             <button
@@ -43,23 +52,51 @@ const navbar = props => {
 
           {/* <ul className={this.state.isOpen ? 'nav-links show-nav' : 'nav-links'}> */}
           <ul className={props.showNav ? "nav-links show-nav " : "nav-links"}>
-            <li>
-              <Link to="/">
+            <li className="nav-item">
+              <Link
+                activeClass="active"
+                to="home-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+              >
                 <FaHome className="link-icon home-color" /> home
               </Link>
             </li>
-            <li>
-              <Link to="/">
+            <li className="nav-item">
+              <Link
+                activeClass="active"
+                to="about-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+              >
                 <FaInfoCircle className="link-icon info-color" /> about
               </Link>
             </li>
-            <li>
-              <Link to="/">
-                <FaBriefcase className="link-icon brief-color" /> portfolio
+            <li className="nav-item">
+              <Link
+                activeClass="active"
+                to="project-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+              >
+                <FaBriefcase className="link-icon brief-color" /> projects
               </Link>
             </li>
-            <li>
-              <Link to="/">
+            <li className="nav-item">
+              <Link
+                activeClass="active"
+                to="skill-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-68}
+              >
                 <FaCog className="link-icon cog-color" /> skills
               </Link>
             </li>
@@ -68,8 +105,15 @@ const navbar = props => {
                 <FaBlog className="link-icon blog-color" /> blog
               </Link>
             </li>
-            <li>
-              <Link to="/">
+            <li className="nav-item">
+              <Link
+                activeClass="active"
+                to="contact-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-68}
+              >
                 <FaEnvelope className="link-icon env-color" /> contact
               </Link>
             </li>

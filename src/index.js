@@ -6,14 +6,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import NotFound from "./pages/NotFound";
 import { Switch, Route } from "react-router-dom";
+import { ProjectProvider } from "./context";
 
 ReactDOM.render(
-  <Router>
-    <Switch>
-      <Route exact path="/" component={App} />
-      <Route component={NotFound} />
-    </Switch>
-  </Router>,
+  <ProjectProvider>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
+  </ProjectProvider>,
   document.getElementById("root")
 );
 
