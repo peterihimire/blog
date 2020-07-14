@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 
-const NotFound = props => {
+const NotFound = () => {
   return (
     <>
       <Navbar />

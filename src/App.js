@@ -24,6 +24,11 @@ import { Link } from "react-scroll";
 // import img4 from "./images/benkih-quiz.png";
 // import img5 from "./images/peterihimirefewd.png";
 
+// import resp from "./images/svg-imgs/responsive.svg";
+// import send from "./images/svg-imgs/send.svg";
+// import vide from "./images/svg-imgs/video-player.svg";
+// import smar from "./images/svg-imgs/smartphone.svg";
+
 import Hero from "./components/Hero";
 import Banner from "./components/Banner";
 import Services from "./components/Services";
@@ -38,6 +43,7 @@ class App extends Component {
     services: [
       {
         icon: <FaGem />,
+        // icon: <img src={smar} alt="send" />,
         iconColor: "gem-color",
         title: "intuitive UX/UI",
         info:
@@ -45,6 +51,7 @@ class App extends Component {
       },
       {
         icon: <FaRocket />,
+        // icon: <img src={send} alt="send" />,
         iconColor: "rocket-color",
         title: "fast load time",
         info:
@@ -52,6 +59,7 @@ class App extends Component {
       },
       {
         icon: <FaDesktop />,
+        // icon: <img src={resp} alt="send" />,
         iconColor: "desktop-color",
         title: "responsive layout",
         info:
@@ -59,6 +67,7 @@ class App extends Component {
       },
       {
         icon: <FaHeartbeat />,
+        // icon: <img src={vide} alt="send" />,
         iconColor: "heart-color",
         title: "dynamic website",
         info:

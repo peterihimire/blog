@@ -17,6 +17,7 @@ import {
 import { Link } from "react-scroll";
 import logo from "../images/l7.svg";
 
+
 const navbar = props => {
   return (
     <>
